@@ -13,8 +13,9 @@ def start(num_encoder, num_decoder):
 
     student12_3 = AsianBartForConditionalGeneration(distill_12_3_config)
 
-    make_student_model(student12_3)
+    sft_student12_3 = make_student_model(student12_3)
 
+    return sft_student12_3
 
 def make_student_model(student12_3):
     teacher_state_dict = teacher_model.state_dict()
@@ -37,6 +38,7 @@ def make_student_model(student12_3):
             student_state_dict[k] = v
     # print(student_state_dict)
     student12_3.load_state_dict(student_state_dict)
+    return student12_3
 
 
 def make_config(num_decoder, num_encoder):
@@ -58,4 +60,4 @@ if __name__ == "__main__":
     decoder_layer_3 = ["decoder.layers.0", "decoder.layers.1", "decoder.layers.2", "decoder.layers.4",
                        "decoder.layers.5", "decoder.layers.6", "decoder.layers.8", "decoder.layers.9",
                        "decoder.layers.10"]
-    start(12, 3)
+    student_model=start(12, 3)
