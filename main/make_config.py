@@ -1,6 +1,13 @@
-from asian_bart import AsianBartForConditionalGeneration,AsianBartConfig
+from asian_bart import AsianBartForConditionalGeneration, AsianBartConfig
 from transformers import MBartForConditionalGeneration
 from collections import OrderedDict
+
+import torch.nn as nn
+import json
+
+
+from typing import List
+
 """
 12_3
 
@@ -8,16 +15,29 @@ from collections import OrderedDict
 To Leverage All Knowledge
 """
 
-def start(num_encoder, num_decoder):
-    distill_12_3_config=make_config(num_decoder, num_encoder)
+teacher_model = AsianBartForConditionalGeneration.from_pretrained(
+        "hyunwoongko/asian-bart-ecjk"
+    )
+decoder_layer_3 = [
+        "decoder.layers.0",
+        "decoder.layers.1",
+        "decoder.layers.2",
+        "decoder.layers.4",
+        "decoder.layers.5",
+        "decoder.layers.6",
+        "decoder.layers.8",
+        "decoder.layers.9",
+        "decoder.layers.10",
+    ]
+
+def start(num_encoder: int, num_decoder: int) -> nn.Module:
+    distill_12_3_config = make_config(num_decoder, num_encoder)
 
     student12_3 = AsianBartForConditionalGeneration(distill_12_3_config)
+    make_student_model(student12_3)
 
-    sft_student12_3 = make_student_model(student12_3)
 
-    return sft_student12_3
-
-def make_student_model(student12_3):
+def make_student_model(student12_3: nn.Module) -> nn.Module:
     teacher_state_dict = teacher_model.state_dict()
     student_state_dict = OrderedDict()
     for k, v in teacher_state_dict.items():
@@ -41,7 +61,7 @@ def make_student_model(student12_3):
     return student12_3
 
 
-def make_config(num_decoder, num_encoder):
+def make_config(num_decoder: int, num_encoder: int) -> json:
     base_model_config = AsianBartConfig.from_pretrained("hyunwoongko/asian-bart-ecjk")
     base_model_config.encoder_layers = num_encoder
     base_model_config.decoder_layers = num_decoder
@@ -49,15 +69,11 @@ def make_config(num_decoder, num_encoder):
 
     return distill12_3_config
 
-def check(k, decoder_layer_3):
+
+def check(k: List[str], decoder_layer_3: List[str]):
     for except_layer in decoder_layer_3:
         if except_layer in k:
             return True
     return False
 
-if __name__ == "__main__":
-    teacher_model = AsianBartForConditionalGeneration.from_pretrained("hyunwoongko/asian-bart-ecjk")
-    decoder_layer_3 = ["decoder.layers.0", "decoder.layers.1", "decoder.layers.2", "decoder.layers.4",
-                       "decoder.layers.5", "decoder.layers.6", "decoder.layers.8", "decoder.layers.9",
-                       "decoder.layers.10"]
-    student_model=start(12, 3)
+

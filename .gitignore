@@ -1,2 +1,7 @@
 dataset/*
 dbart/*
+
+# jupyter
+
+.ipynb_checkpoints/*
+*.ipynb
