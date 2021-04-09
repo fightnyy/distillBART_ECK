@@ -13,9 +13,9 @@ if __name__ == "__main__":
         callbacks=[
             EarlyStopping(monitor="val_loss"),
             ModelCheckpoint(
-                dirpath="./drive/MyDrive/mbart_ckpt",
+                dirpath="./drive/MyDrive/mlbart_ckpt",
                 monitor="val_loss",
-                filename="paraphrase_mbart_{epoch:02d}-{val_loss:.2f}",
+                filename="paraphrase_mlbart_{epoch:02d}-{val_loss:.2f}",
                 save_top_k=-1,
                 mode="min",
             ),

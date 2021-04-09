@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35817ca7-e6cf-47b4-b818-d6afb7098961" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/get_bleu.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/run.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/make_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/make_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/get_bleu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
+            <state relative-caret-position="-46">
               <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding>
                 <element signature="e#75#90#0" expanded="true" />
@@ -56,13 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="190">
-                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-              </first_editor>
+              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -71,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="114">
               <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
@@ -80,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
+            <state relative-caret-position="399">
+              <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -162,11 +152,11 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/main/make_config.py" />
         <option value="$PROJECT_DIR$/main/get_bleu.py" />
-        <option value="$PROJECT_DIR$/main/run.py" />
         <option value="$PROJECT_DIR$/main/main.py" />
         <option value="$PROJECT_DIR$/main/preprocessing.py" />
         <option value="$PROJECT_DIR$/main/test.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/main/run.py" />
       </list>
     </option>
   </component>
@@ -274,12 +264,12 @@
       <workItem from="1617713047433" duration="2716000" />
       <workItem from="1617759580008" duration="45000" />
       <workItem from="1617924734878" duration="3828000" />
-      <workItem from="1617949088599" duration="9948000" />
+      <workItem from="1617949088599" duration="10194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25468000" />
+    <option name="totallyTimeSpent" value="25714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -291,9 +281,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="7" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24425575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24425575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -306,7 +297,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32930514" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.35045317" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -320,13 +311,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/Untitled.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -351,22 +335,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Untitled.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="18" column="49" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="98" selection-start-line="24" selection-start-column="98" selection-end-line="24" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -393,7 +382,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="114">
           <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
@@ -403,7 +392,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main/get_bleu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
+        <state relative-caret-position="-46">
           <caret line="26" column="38" lean-forward="true" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="e#75#90#0" expanded="true" />
@@ -411,13 +400,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="190">
-            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/main/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
