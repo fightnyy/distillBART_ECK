@@ -117,11 +117,11 @@ def get_pawsx_data(dataset_path : str,lang : str, mode: str):
             raise ValueError('parameter lang only allow "ko", "ja","en"')
 
         if mode == 'train':
-            paws_train_set.append([s1, s2, lang_code, lang_code])
+            paws_train_set.append([s1, s2, lang_code])
         elif mode == "validation":
-            paws_val_set.append([s1, s2, lang_code, lang_code])
+            paws_val_set.append([s1, s2, lang_code])
         elif mode == "test":
-            paws_test_set.append([s1, s2, lang_code, lang_code])
+            paws_test_set.append([s1, s2, lang_code])
         else:
             raise ValueError("parameter mode only allow \"test\", \"validation\", \"test\"")
 

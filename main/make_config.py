@@ -34,7 +34,8 @@ def start(num_encoder: int, num_decoder: int) -> nn.Module:
     distill_12_3_config = make_config(num_decoder, num_encoder)
 
     student12_3 = AsianBartForConditionalGeneration(distill_12_3_config)
-    make_student_model(student12_3)
+    model = make_student_model(student12_3)
+    return model
 
 
 def make_student_model(student12_3: nn.Module) -> nn.Module:
@@ -43,8 +44,6 @@ def make_student_model(student12_3: nn.Module) -> nn.Module:
     for k, v in teacher_state_dict.items():
         if "decoder.layers.11" in k:
             k = k[:21] + "2" + k[23:]
-            print(f"k : {k}")
-            print()
             student_state_dict[k] = v
 
         if check(k, decoder_layer_3):
@@ -75,5 +74,4 @@ def check(k: List[str], decoder_layer_3: List[str]):
         if except_layer in k:
             return True
     return False
-
 
