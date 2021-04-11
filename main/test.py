@@ -10,7 +10,7 @@ s1, s2, lang_code, lang_code
 if __name__ == "__main__":
     print("test_start")
     print("model_loading")
-    model = DistillBart(n_encoder= 12,n_decoder=3).load_from_checkpoint(checkpoint_path="check/point/path").model
+    model = DistillBart(n_encoder= 12,n_decoder=3).load_from_checkpoint(checkpoint_path="drive/MyDrive/mlbart_ckpt/paraphrase_mlbart_epoch=00-val_loss=0.14.ckpt").model
     print("model_loaded")
 
     print("tokenizer_loading")
