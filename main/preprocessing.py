@@ -50,11 +50,11 @@ def load_multilingual_dataset(
 
     get_pawsx_data(dataset_path,"ko" " train")
     get_pawsx_data(dataset_path,"en", "train")
-    get_pawsx_data(dataset_path,"ja", "train")
+    get_pawsx_data(dataset_path,"zh", "train")
 
     get_pawsx_data(dataset_path,"ko", "validation")
     get_pawsx_data(dataset_path,"en", "validation")
-    get_pawsx_data(dataset_path,"ja", "validation")
+    get_pawsx_data(dataset_path,"zh", "validation")
 
     train_set.extend(paws_train_set)
 
@@ -83,7 +83,7 @@ def load_multilingual_dataset(
 def get_test_data(dataset_path,batch_size):
     get_pawsx_data(dataset_path,"ko", "test")
     get_pawsx_data(dataset_path,"en", "test")
-    get_pawsx_data(dataset_path,"ja", "test")
+    get_pawsx_data(dataset_path,"zh", "test")
 
     test_loader = DataLoader(
         paws_test_set,
@@ -100,7 +100,7 @@ def get_pawsx_data(dataset_path : str,lang : str, mode: str):
     """
     load paws_x dataset and create DataLoader
     Args:
-        lang (str): language that you want to make dataset Ex) ko -> Korean, en-> English, ja -> Japanese
+        lang (str): language that you want to make dataset Ex) ko -> Korean, en-> English, zh -> chinese
         mode (int): the mode that you want to choose Ex) train, validation
     """
     for val in (open(f"{os.getcwd()}/{dataset_path}/{lang}/{mode}.tsv", "r", encoding="utf8").read().splitlines()):
@@ -111,10 +111,10 @@ def get_pawsx_data(dataset_path : str,lang : str, mode: str):
             lang_code = 'ko_KR'
         elif lang == 'en':
             lang_code = 'en_XX'
-        elif lang == 'ja':
-            lang_code = 'ja_XX'
+        elif lang == 'zh':
+            lang_code = 'zh_CN'
         else:
-            raise ValueError('parameter lang only allow "ko", "ja","en"')
+            raise ValueError('parameter lang only allow "ko", "zh","en"')
 
         if mode == 'train':
             paws_train_set.append([s1, s2, lang_code])
