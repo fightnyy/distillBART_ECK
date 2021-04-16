@@ -16,19 +16,20 @@ To Leverage All Knowledge
 """
 
 teacher_model = AsianBartForConditionalGeneration.from_pretrained(
-        "hyunwoongko/asian-bart-ecjk"
-    )
+    "hyunwoongko/asian-bart-ecjk"
+)
 decoder_layer_3 = [
-        "decoder.layers.0",
-        "decoder.layers.1",
-        "decoder.layers.2",
-        "decoder.layers.4",
-        "decoder.layers.5",
-        "decoder.layers.6",
-        "decoder.layers.8",
-        "decoder.layers.9",
-        "decoder.layers.10",
-    ]
+    "decoder.layers.0",
+    "decoder.layers.1",
+    "decoder.layers.2",
+    "decoder.layers.4",
+    "decoder.layers.5",
+    "decoder.layers.6",
+    "decoder.layers.8",
+    "decoder.layers.9",
+    "decoder.layers.10",
+]
+
 
 def start(num_encoder: int, num_decoder: int) -> nn.Module:
     distill_12_3_config = make_config(num_decoder, num_encoder)
@@ -74,4 +75,3 @@ def check(k: List[str], decoder_layer_3: List[str]):
         if except_layer in k:
             return True
     return False
-

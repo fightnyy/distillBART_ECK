@@ -20,8 +20,12 @@ if __name__ == "__main__":
                 mode="min",
             ),
         ],
-        progress_bar_refresh_rate=20
+        progress_bar_refresh_rate=20,
     )
-    train_dataloader, validation_dataloader = load_multilingual_dataset(dataset_path=f'{os.getcwd()}/drive/MyDrive/dataset', batch_size=4)
+    train_dataloader, validation_dataloader = load_multilingual_dataset(
+        dataset_path=f"{os.getcwd()}/drive/MyDrive/dataset", batch_size=4
+    )
     model = DistillBart(12, 3)
-    trainer.fit(model, train_dataloader=train_dataloader, val_dataloaders=validation_dataloader)
+    trainer.fit(
+        model, train_dataloader=train_dataloader, val_dataloaders=validation_dataloader
+    )

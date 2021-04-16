@@ -10,10 +10,18 @@ _all_mbart_models = [
     "hyunwoongko/asian-bart-ja",
 ]
 
-class AsianBartTokenizer(XLMRobertaTokenizer):
 
-    def __init__(self, *args, tokenizer_file=None, src_lang=None, tgt_lang=None, **kwargs):
-        super().__init__(*args, tokenizer_file=tokenizer_file, src_lang=src_lang, tgt_lang=tgt_lang, **kwargs)
+class AsianBartTokenizer(XLMRobertaTokenizer):
+    def __init__(
+        self, *args, tokenizer_file=None, src_lang=None, tgt_lang=None, **kwargs
+    ):
+        super().__init__(
+            *args,
+            tokenizer_file=tokenizer_file,
+            src_lang=src_lang,
+            tgt_lang=tgt_lang,
+            **kwargs
+        )
         self.vocab_files_names = {"vocab_file": self.vocab_file}
         self.max_model_input_sizes = {m: 1024 for m in _all_mbart_models}
         self.sp_model_size = len(self.sp_model)
@@ -48,9 +56,9 @@ class AsianBartTokenizer(XLMRobertaTokenizer):
         }
 
         self.id_to_lang_code = {v: k for k, v in self.lang_code_to_id.items()}
-        self.fairseq_tokens_to_ids["<mask>"] = (len(self.sp_model) +
-                                                len(self.lang_code_to_id) +
-                                                self.fairseq_offset)
+        self.fairseq_tokens_to_ids["<mask>"] = (
+            len(self.sp_model) + len(self.lang_code_to_id) + self.fairseq_offset
+        )
 
         self.fairseq_tokens_to_ids.update(self.lang_code_to_id)
         self.fairseq_ids_to_tokens = {
@@ -78,7 +86,7 @@ class AsianBartTokenizer(XLMRobertaTokenizer):
         src_langs: List[str],
         tgt_texts: List[str] = None,
         tgt_langs: List[str] = None,
-        padding = "max_length",
+        padding="max_length",
         max_len: int = 256,
     ) -> Dict:
 
@@ -158,16 +166,17 @@ class AsianBartTokenizer(XLMRobertaTokenizer):
 
             special_tokens = torch.tensor([eos, lang], requires_grad=False)
             input_id = torch.cat(
-                [input_id[:idx_to_add], special_tokens,
-                 input_id[idx_to_add:]]).long()
+                [input_id[:idx_to_add], special_tokens, input_id[idx_to_add:]]
+            ).long()
 
-            additional_attention_mask = torch.tensor([1, 1],
-                                                     requires_grad=False)
-            atn_mask = torch.cat([
-                atn_mask[:idx_to_add],
-                additional_attention_mask,
-                atn_mask[idx_to_add:],
-            ]).long()
+            additional_attention_mask = torch.tensor([1, 1], requires_grad=False)
+            atn_mask = torch.cat(
+                [
+                    atn_mask[:idx_to_add],
+                    additional_attention_mask,
+                    atn_mask[idx_to_add:],
+                ]
+            ).long()
 
             token_added_ids.append(input_id.unsqueeze(0))
             token_added_masks.append(atn_mask.unsqueeze(0))
@@ -177,9 +186,8 @@ class AsianBartTokenizer(XLMRobertaTokenizer):
         return tokens
 
     def build_inputs_with_special_tokens(
-            self,
-            token_ids_0: List[int],
-            token_ids_1: Optional[List[int]] = None) -> List[int]:
+        self, token_ids_0: List[int], token_ids_1: Optional[List[int]] = None
+    ) -> List[int]:
 
         if token_ids_1 is None:
             return self.prefix_tokens + token_ids_0 + self.suffix_tokens
@@ -201,13 +209,17 @@ class AsianBartTokenizer(XLMRobertaTokenizer):
                 )
             return list(
                 map(
-                    lambda x: 1
-                    if x in [self.sep_token_id, self.cls_token_id] else 0,
+                    lambda x: 1 if x in [self.sep_token_id, self.cls_token_id] else 0,
                     token_ids_0,
-                ))
+                )
+            )
         prefix_ones = [1] * len(self.prefix_tokens)
         suffix_ones = [1] * len(self.suffix_tokens)
         if token_ids_1 is None:
             return prefix_ones + ([0] * len(token_ids_0)) + suffix_ones
-        return (prefix_ones + ([0] * len(token_ids_0)) +
-                ([0] * len(token_ids_1)) + suffix_ones)
+        return (
+            prefix_ones
+            + ([0] * len(token_ids_0))
+            + ([0] * len(token_ids_1))
+            + suffix_ones
+        )
