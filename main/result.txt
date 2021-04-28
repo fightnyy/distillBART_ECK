@@ -1,0 +1,2 @@
+encoder_distill_layers : ['encoder.layers.0', 'encoder.layers.1', 'encoder.layers.2', 'encoder.layers.3', 'encoder.layers.4', 'encoder.layers.5', 'encoder.layers.6', 'encoder.layers.7', 'encoder.layers.8', 'encoder.layers.9', 'encoder.layers.10', 'encoder.layers.11']
+decoder_distill_layers : ['decoder.layers.0', 'decoder.layers.4', 'decoder.layers.8']

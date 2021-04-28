@@ -25,7 +25,7 @@ if __name__ == "__main__":
     train_dataloader, validation_dataloader = load_multilingual_dataset(
         dataset_path=f"{os.getcwd()}/drive/MyDrive/dataset", batch_size=4
     )
-    model = DistillBart(12, 3)
+    model = DistillBart(9, 3)
     trainer.fit(
         model, train_dataloader=train_dataloader, val_dataloaders=validation_dataloader
     )
