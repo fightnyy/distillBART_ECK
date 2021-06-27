@@ -14,13 +14,17 @@
 
 __Inference Time :__ 0.5S
 
+__Parameter Size__ : 262M(3.15G)
+
+
+
 
 
 | __BLEU__ \ Model | 9-3 English | 9 -3 Korean | 9 - 3 Chinese |
 | ---------------- | ----------- | ----------- | ------------- |
-| 1st epoch        | __54__      | __36__      | __24__        |
-| 2nd epoch        |             |             |               |
-| 3rd epoch        |             |             |               |
-| 4th epoch        |             |             |               |
-
+| 1st epoch        | 54          | __36__      | 24            |
+| 2nd epoch        | __55__      | 35          | __25__        |
+| 3rd epoch        | 54          | 35          | 23            |
 __Inference Time :__ 0.2S
+
+__Parameter Size__ : 224M(2.7G)
