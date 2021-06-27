@@ -2,7 +2,8 @@ dataset/*
 dbart/*
 .DS_Store
 # jupyter
-
+*/bleuvenv/*
+*.txt
 .ipynb_checkpoints/*
 *.ipynb
 

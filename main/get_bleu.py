@@ -45,8 +45,8 @@ if __name__ == "__main__":
     else:
         tokenizer = Pororo(task="tokenization", lang="en")
 
-    hyp_lines = open(hyp, "r", encoding="utf8").read().strip().splitlines()[:1000]
-    ref_lines = open(ref, "r", encoding="utf8").read().strip().splitlines()[:1000]
+    hyp_lines = open(hyp, "r", encoding="utf8").read().strip().splitlines()[4000:]
+    ref_lines = open(ref, "r", encoding="utf8").read().strip().splitlines()[4000:]
 
     assert len(hyp_lines) == len(ref_lines)
 

@@ -18,7 +18,7 @@ __Inference Time :__ 0.5S
 
 | __BLEU__ \ Model | 9-3 English | 9 -3 Korean | 9 - 3 Chinese |
 | ---------------- | ----------- | ----------- | ------------- |
-| 1st epoch        |             |             |               |
+| 1st epoch        | __54__      | __36__      | __24__        |
 | 2nd epoch        |             |             |               |
 | 3rd epoch        |             |             |               |
 | 4th epoch        |             |             |               |
