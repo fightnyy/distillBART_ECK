@@ -4,6 +4,7 @@ dbart/*
 # jupyter
 */bleuvenv/*
 *.txt
+*.xml
 .ipynb_checkpoints/*
 *.ipynb
 
