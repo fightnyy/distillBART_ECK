@@ -25,6 +25,7 @@ __Parameter Size__ : 262M(3.15G)
 | 1st epoch        | 54          | __36__      | 24            |
 | 2nd epoch        | __55__      | 35          | __25__        |
 | 3rd epoch        | 54          | 35          | 23            |
+
 __Inference Time :__ 0.2S
 
 __Parameter Size__ : 224M(2.7G)
